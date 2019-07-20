@@ -1,0 +1,5 @@
+.carousel-cell { width: 100vw; height: 50vh; min-height: 250px; background-size: cover; background-position: center; }
+
+.carousel-cell .container { max-width: 1200px; margin: 0 auto; height: 100%; display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center; -ms-flex-pack: center; justify-content: center; color: white; }
+
+.carousel-cell .container p { text-transform: uppercase; font-weight: 800; font-size: 20px; padding: 20px; border: 1px solid black; background-color: rgba(0, 0, 0, 0.5); }
