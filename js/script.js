@@ -4,4 +4,6 @@ let flkty = new Flickity(mainCarousel, {
     // options
     cellAlign: 'left',
     contain: true,
+    pageDots: false,
+    hash: true,
 });
