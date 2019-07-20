@@ -1,4 +1,5 @@
 const mainCarousel = document.querySelector('.main-carousel');
+const restartButton = document.querySelector('.restartButton');
 
 let flkty = new Flickity(mainCarousel, {
     // options
@@ -7,3 +8,7 @@ let flkty = new Flickity(mainCarousel, {
     pageDots: false,
     hash: true,
 });
+
+restartButton.addEventListener('click', function () {
+    flkty.selectCell(0);
+})
