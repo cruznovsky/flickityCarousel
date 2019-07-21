@@ -19,6 +19,8 @@
     <div class="main-carousel" id='results'>
 
     </div>
+    <div class="progress-bar"></div>
+    <div id="map"></div>
     <script id='template-slide' type='x-tmpl-mustache'>
     <div class="carousel-cell" id='{{numberID}}' style='background-image: url("{{image}}")'>
         <div class="container">
@@ -57,11 +59,13 @@
         ]
 
     </script>
-    <div class="progress-bar"></div>
     <script src="vendor/flickity.pkgd.min.js"></script>
     <script src="vendor/hash.js"></script>
     <script src="vendor/mustache.js"></script>
     <script src="js/script.js"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYDLBt0fWaWSfcP4AcIRXaTDFQDfNncUE&callback=initMap">
+        </script>
 </body>
 
 </html>
