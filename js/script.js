@@ -1,9 +1,21 @@
+'use strict';
+
 const mainCarousel = document.querySelector('.main-carousel');
 const restartButton = document.querySelector('.restartButton');
 const progressBar = document.querySelector('.progress-bar');
 
+let templateSlide = document.getElementById('template-carousel-slide').innerHTML;
+
+Mustache.parse(templateSlide);
+let slidesList = '';
+
+for (var i = 0; i < data.length; i++) {
+    slidesList += Mustache.render(templateSlide, data[i]);
+}
+
+mainCarousel.innerHTML = slidesList;
+
 let flkty = new Flickity(mainCarousel, {
-    // options
     cellAlign: 'left',
     contain: true,
     pageDots: false,
