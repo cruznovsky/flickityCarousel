@@ -4,7 +4,7 @@ const mainCarousel = document.querySelector('.main-carousel');
 const restartButton = document.querySelector('.restartButton');
 const progressBar = document.querySelector('.progress-bar');
 
-let templateSlide = document.getElementById('template-carousel-slide').innerHTML;
+let templateSlide = document.getElementById('template-slide').innerHTML;
 
 Mustache.parse(templateSlide);
 let slidesList = '';

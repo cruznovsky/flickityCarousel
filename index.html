@@ -19,42 +19,43 @@
     <div class="main-carousel" id='results'>
 
     </div>
-    <script id='template-carousel-slide' type='x-tmpl-mustache'>
-    <div class="carousel-cell" style="background-image: url({{image}})">
+    <script id='template-slide' type='x-tmpl-mustache'>
+    <div class="carousel-cell" id='{{numberID}}' style='background-image: url("{{image}}")'>
         <div class="container">
-            <h1>{{title}}</h1>
-            {{{description}}}
+          {{{ description }}}
         </div>
-	</div>
+    </div>
     </script>
     <script>
+
         let data = [
             {
                 image: 'images/dubai.jpg',
-                title: 'Country: ',
+                numberID: 'carousel-cell-1',
                 description: '<p>Dubai</p>'
             },
             {
                 image: 'images/moscow.jpg',
-                title: 'Country: ',
+                numberID: 'carousel-cell-2',
                 description: '<p>Moscow</p>'
             },
             {
                 image: 'images/new-york.jpg',
-                title: 'Country: ',
+                numberID: 'carousel-cell-3',
                 description: '<p>New York</p>'
             },
             {
                 image: 'images/portugal.jpg',
-                title: 'Country: ',
+                numberID: 'carousel-cell-4',
                 description: '<p>Portugal</p>'
             },
             {
                 image: 'images/warsaw.jpg',
-                title: 'Country: ',
+                numberID: 'carousel-cell-5',
                 description: '<p>Warsaw</p>'
             }
-        ];
+        ]
+
     </script>
     <div class="progress-bar"></div>
     <script src="vendor/flickity.pkgd.min.js"></script>
