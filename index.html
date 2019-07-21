@@ -16,37 +16,76 @@
     <button class="restartButton">
         <i class="fas fa-sync-alt"></i>
     </button>
-    <div class="main-carousel">
-        <div class="carousel-cell" id="carousel-cell-1" style="background-image: url(images/dubai.jpg)">
-            <div class="container">
-                <p>Dubai</p>
-            </div>
-        </div>
-        <div class="carousel-cell" id="carousel-cell-2" style="background-image: url(images/moscow.jpg)">
-            <div class="container">
-                <p>Moscow</p>
-            </div>
-        </div>
-        <div class="carousel-cell" id="carousel-cell-3" style="background-image: url(images/new-york.jpg)">
-            <div class="container">
-                <p>New York</p>
-            </div>
-        </div>
-        <div class="carousel-cell" id="carousel-cell-4" style="background-image: url(images/portugal.jpg)">
-            <div class="container">
-                <p>Portugal</p>
-            </div>
-        </div>
-        <div class="carousel-cell" id="carousel-cell-5" style="background-image: url(images/warsaw.jpg)">
-            <div class="container">
-                <p>Warsaw</p>
-            </div>
-        </div>
+    <div class="main-carousel" id='results'>
+
     </div>
     <div class="progress-bar"></div>
+    <div id="map"></div>
+    <script id='template-slide' type='x-tmpl-mustache'>
+    <div class="carousel-cell" id='{{numberID}}' style='background-image: url("{{image}}")'>
+        <div class="container">
+          {{{ description }}}
+        </div>
+    </div>
+    </script>
+    <script>
+
+        let data = [
+            {
+                image: 'images/dubai.jpg',
+                numberID: 'carousel-cell-1',
+                description: '<p>Dubai</p>',
+                cords: {
+                    lat: 25.205438,
+                    lng: 55.270746
+                }
+            },
+            {
+                image: 'images/moscow.jpg',
+                numberID: 'carousel-cell-2',
+                description: '<p>Moscow</p>',
+                cords: {
+                    lat: 55.757268,
+                    lng: 37.617474
+                }
+            },
+            {
+                image: 'images/new-york.jpg',
+                numberID: 'carousel-cell-3',
+                description: '<p>New York</p>',
+                cords: {
+                    lat: 40.712500,
+                    lng: -74.006485
+                }
+            },
+            {
+                image: 'images/portugal.jpg',
+                numberID: 'carousel-cell-4',
+                description: '<p>Portugal</p>',
+                cords: {
+                    lat: 39.682160,
+                    lng: -8.644097
+                }
+            },
+            {
+                image: 'images/warsaw.jpg',
+                numberID: 'carousel-cell-5',
+                description: '<p>Warsaw</p>',
+                cords: {
+                    lat: 52.227098,
+                    lng: 21.008384
+                }
+            }
+        ]
+
+    </script>
     <script src="vendor/flickity.pkgd.min.js"></script>
     <script src="vendor/hash.js"></script>
+    <script src="vendor/mustache.js"></script>
     <script src="js/script.js"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYDLBt0fWaWSfcP4AcIRXaTDFQDfNncUE&callback=initMap">
+        </script>
 </body>
 
 </html>
