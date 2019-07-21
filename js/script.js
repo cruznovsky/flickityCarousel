@@ -3,13 +3,14 @@
 const mainCarousel = document.querySelector('.main-carousel');
 const restartButton = document.querySelector('.restartButton');
 const progressBar = document.querySelector('.progress-bar');
+const templateSlide = document.getElementById('template-slide').innerHTML;
+let marker = [];
 
-let templateSlide = document.getElementById('template-slide').innerHTML;
 
 Mustache.parse(templateSlide);
 let slidesList = '';
 
-for (var i = 0; i < data.length; i++) {
+for (let i = 0; i < data.length; i++) {
     slidesList += Mustache.render(templateSlide, data[i]);
 }
 
@@ -32,14 +33,18 @@ flkty.on('scroll', function (progress) {
 });
 
 window.initMap = function () {
-    let uluru = { lat: -25.344, lng: 131.036 };
 
     let map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 4,
-        center: uluru
+        zoom: 8,
+        center: data[0].cords
     });
-    let marker = new google.maps.Marker({
-        position: uluru,
-        map: map
-    });
+
+    for (let i = 0; i < data.length; i++) {
+
+        marker[i] = new google.maps.Marker({
+            position: data[i].cords,
+            map: map
+        });
+    }
 }
+
